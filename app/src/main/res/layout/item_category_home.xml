@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="88dp"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_marginHorizontal="8dp">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/imageLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintDimensionRatio="1:1"
+        app:strokeWidth="1dp"
+        app:cardCornerRadius="14dp"
+        app:strokeColor="@color/gray_1"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            tools:src="@tools:sample/backgrounds/scenic"/>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:text="Chicken"
+        app:layout_constraintTop_toBottomOf="@id/imageLayout"
+        android:fontFamily="@font/semi_bold"
+        android:textSize="16sp"
+        android:textColor="@color/dark"
+        android:layout_marginTop="12dp"/>
+
+    <TextView
+        android:id="@+id/items"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:text="@string/item_category_count"
+        android:textColor="@color/soft_gray"
+        app:layout_constraintTop_toBottomOf="@id/name"
+        android:layout_marginTop="2dp"
+        android:fontFamily="@font/regular"
+        android:textSize="12sp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

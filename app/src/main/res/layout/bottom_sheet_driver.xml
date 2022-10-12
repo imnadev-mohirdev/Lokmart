@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
+    app:behavior_hideable="false"
+    android:visibility="gone"
+    tools:visibility="visible"
+    android:background="@drawable/background_bottom_sheet"
+    app:behavior_peekHeight="32dp">
+    
+    <ImageView
+        android:id="@+id/indicator"
+        android:layout_width="46dp"
+        android:layout_height="6dp"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="14dp"
+        app:layout_constraintStart_toStartOf="parent"
+        android:src="@drawable/indicator_sheet"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <ImageView
+        android:id="@+id/avatar"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        app:layout_constraintTop_toBottomOf="@id/indicator"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="28dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="56dp"
+        tools:src="@tools:sample/backgrounds/scenic"
+        android:scaleType="centerCrop"/>
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="Devin Joseph"
+        android:textColor="@color/dark"
+        android:fontFamily="@font/semi_bold"
+        android:textSize="18sp"
+        app:layout_constraintTop_toTopOf="@id/avatar"
+        app:layout_constraintStart_toEndOf="@id/avatar"
+        android:layout_marginStart="21dp"/>
+
+    <ImageView
+        android:id="@+id/icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/name"
+        app:layout_constraintBottom_toBottomOf="@id/avatar"
+        app:layout_constraintStart_toStartOf="@id/name"
+        android:src="@drawable/ic_driver_check"/>
+
+    <TextView
+        android:id="@+id/id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="@string/bottom_sheet_driver_id"
+        app:layout_constraintTop_toTopOf="@id/icon"
+        app:layout_constraintBottom_toBottomOf="@id/icon"
+        app:layout_constraintStart_toEndOf="@id/icon"
+        android:layout_marginStart="11dp"
+        android:textColor="@color/soft_gray"
+        android:fontFamily="@font/medium"
+        android:textSize="14sp"/>
+
+    <ImageView
+        android:id="@+id/call"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_call"
+        app:layout_constraintTop_toTopOf="@id/avatar"
+        app:layout_constraintEnd_toStartOf="@id/chat"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintBottom_toBottomOf="@id/avatar"/>
+
+    <ImageView
+        android:id="@+id/chat"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/ic_chat"
+        android:padding="13dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="18dp"
+        app:layout_constraintTop_toTopOf="@id/avatar"
+        app:layout_constraintBottom_toBottomOf="@id/avatar"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

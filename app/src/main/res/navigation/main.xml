@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/signInFragment"
+        android:name="uz.mohirdev.lokmart.presentation.sign_in.SignInFragment"
+        android:label="SignInFragment"
+        tools:layout="@layout/fragment_sign_in">
+
+        <action
+            android:id="@+id/to_signUpFragment"
+            app:destination="@id/signUpFragment"
+            app:popUpTo="@id/signUpFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/onboardingFragment"
+        android:name="uz.mohirdev.lokmart.presentation.onboarding.OnboardingFragment"
+        android:label="OnboardingFragment"
+        tools:layout="@layout/fragment_onboarding">
+
+        <action
+            android:id="@+id/to_signInFragment"
+            app:destination="@+id/signInFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/signUpFragment"
+        android:name="uz.mohirdev.lokmart.presentation.sign_up.SignUpFragment"
+        android:label="SignUpFragment"
+        tools:layout="@layout/fragment_sign_up">
+
+        <action
+            android:id="@+id/to_signInFragment"
+            app:destination="@id/signInFragment"
+            app:popUpTo="@id/signInFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="uz.mohirdev.lokmart.presentation.home.HomeFragment"
+        android:label="HomeFragment"
+        tools:layout="@layout/fragment_home">
+
+        <action
+            android:id="@+id/to_categoriesFragment"
+            app:destination="@id/categoriesFragment" />
+
+        <action
+            android:id="@+id/to_productsFragment"
+            app:destination="@id/productsFragment" />
+
+        <action
+            android:id="@+id/to_searchFragment"
+            app:destination="@id/searchFragment" />
+
+        <action
+            android:id="@+id/to_detailFragment"
+            app:destination="@id/detailFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/categoriesFragment"
+        android:name="uz.mohirdev.lokmart.presentation.categories.CategoriesFragment"
+        android:label="CategoriesFragment"
+        tools:layout="@layout/fragment_categories">
+
+        <action
+            android:id="@+id/to_productsFragment"
+            app:destination="@id/productsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/productsFragment"
+        android:name="uz.mohirdev.lokmart.presentation.products.ProductsFragment"
+        android:label="ProductsFragment"
+        tools:layout="@layout/fragment_products">
+
+        <argument
+            android:name="category"
+            app:argType="uz.mohirdev.lokmart.data.api.product.dto.Category" />
+
+        <action
+            android:id="@+id/to_searchFragment"
+            app:destination="@id/searchFragment" />
+
+        <action
+            android:id="@+id/to_detailFragment"
+            app:destination="@id/detailFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="uz.mohirdev.lokmart.presentation.search.SearchFragment"
+        android:label="SearchFragment"
+        tools:layout="@layout/fragment_search">
+
+        <argument
+            android:name="category"
+            android:defaultValue="@null"
+            app:argType="uz.mohirdev.lokmart.data.api.product.dto.Category"
+            app:nullable="true" />
+
+        <argument
+            android:name="wishlist"
+            app:argType="boolean"
+            android:defaultValue="false"/>
+
+        <action
+            android:id="@+id/to_filterFragment"
+            app:destination="@id/filterFragment" />
+
+        <action
+            android:id="@+id/to_detailFragment"
+            app:destination="@id/detailFragment" />
+    </fragment>
+
+    <action
+        android:id="@+id/to_onboardingFragment"
+        app:destination="@id/onboardingFragment"
+        app:popUpTo="@id/main" />
+
+    <action
+        android:id="@+id/to_signInFragment"
+        app:destination="@id/signInFragment"
+        app:popUpTo="@id/main" />
+
+    <action
+        android:id="@+id/to_homeFragment"
+        app:destination="@id/homeFragment"
+        app:popUpTo="@id/main" />
+
+    <fragment
+        android:id="@+id/filterFragment"
+        android:name="uz.mohirdev.lokmart.presentation.filter.FilterFragment"
+        android:label="FilterFragment"
+        tools:layout="@layout/fragment_filter">
+
+        <argument
+            android:name="filter"
+            app:argType="uz.mohirdev.lokmart.domain.model.ProductQuery" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="uz.mohirdev.lokmart.presentation.detail.DetailFragment"
+        android:label="DetailFragment"
+        tools:layout="@layout/fragment_detail">
+
+        <deepLink
+            android:autoVerify="true"
+            app:uri="307391e6-39cd-4f22-ac63-aefa2d7de0d4.mock.pstmn.io/products/{id}" />
+
+        <argument
+            android:name="id"
+            app:argType="string" />
+
+        <action
+            android:id="@+id/to_detailFragment"
+            app:destination="@id/detailFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/ordersFragment"
+        android:name="uz.mohirdev.lokmart.presentation.orders.OrdersFragment"
+        android:label="OrdersFragment"
+        tools:layout="@layout/fragment_orders">
+
+        <action
+            android:id="@+id/to_mapFragment"
+            app:destination="@id/mapFragment"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/cartFragment"
+        android:name="uz.mohirdev.lokmart.presentation.cart.CartFragment"
+        android:label="CartFragment"
+        tools:layout="@layout/fragment_cart">
+
+        <action
+            android:id="@+id/to_detailFragment"
+            app:destination="@id/detailFragment"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/wishlistFragment"
+        android:name="uz.mohirdev.lokmart.presentation.wishlist.WishlistFragment"
+        android:label="WishlistFragment"
+        tools:layout="@layout/fragment_wishlist">
+
+        <action
+            android:id="@+id/to_detailFragment"
+            app:destination="@id/detailFragment"/>
+
+        <action
+            android:id="@+id/to_searchFragment"
+            app:destination="@id/searchFragment">
+
+            <argument
+                android:name="wishlist"
+                app:argType="boolean"
+                android:defaultValue="true"/>
+        </action>
+    </fragment>
+
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="uz.mohirdev.lokmart.presentation.profile.ProfileFragment"
+        android:label="ProfileFragment"
+        tools:layout="@layout/fragment_profile" />
+
+    <fragment
+        android:id="@+id/mapFragment"
+        android:name="uz.mohirdev.lokmart.presentation.map.MapFragment"
+        android:label="MapFragment"
+        tools:layout="@layout/fragment_map">
+
+        <argument
+            android:name="order"
+            app:argType="integer"/>
+    </fragment>
+</navigation>

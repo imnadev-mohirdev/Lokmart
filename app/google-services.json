@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "13313834115",
+    "project_id": "lokmart-mohirdev",
+    "storage_bucket": "lokmart-mohirdev.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:13313834115:android:9a4b4ba793643c563b6fb6",
+        "android_client_info": {
+          "package_name": "uz.mohirdev.lokmart"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "13313834115-3r0hjmdglls8dvjf7a51ctvjv0i0gu2c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBcEyVcK6U5Bamp9yZto_TsOg0NJRAC4Qg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "13313834115-3r0hjmdglls8dvjf7a51ctvjv0i0gu2c.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
